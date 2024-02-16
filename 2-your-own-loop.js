@@ -1,12 +1,12 @@
 // Your code here.
 function loop(num,test,change,output){
-    const n = num
-   if (test(n) === false){
-      output(n)
-   } else if (test(n) === true) {
-    output(n)
-    change(n);
-    num = n
+    let n = num
+   if (!test(n)){
+      return "";
+   } else {
+    output(n);
+    n = change(n);
+    loop(n, test, change, output);
    }
 }
 
